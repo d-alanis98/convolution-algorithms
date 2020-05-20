@@ -1,6 +1,6 @@
 Práctica de algoritmos de convolución discreta de secuencias para la unidad de aprendizaje de Teoría de Comunicaciones y señales.
 
-## Available Scripts
+## Modo de uso
 
 En el directorio del proyecto ejecutar:
 ### `npm install`
