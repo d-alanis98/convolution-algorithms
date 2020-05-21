@@ -6,17 +6,14 @@ const Members = () => (
         <h5>Integrantes:</h5>
         <div className='d-flex flex-row justify-content-center w-100'>
             <Member
-                id = 'damian'
-                name = 'Damián Alanís Ramírez'
+                memberId = 'damian'
             />
             <Member
-                id = 'josue'
-                name = 'Josue David Ramírez'
+                memberId = 'josue'
                 className = 'ml-3'
             />
             <Member
-                id = 'vladimir'
-                name = 'Vladimir Azpetía Hernández'
+                memberId = 'vladimir'
                 className = 'ml-3'
             />
         </div>

@@ -50,6 +50,7 @@ const FunctionPreview = ({ functions, history, convolutionResult, setAlert, setF
             <button className='btn btn-danger btn-sm rounded-lg shadow' onClick = { clearFunctions }>
                 Restablecer
             </button>
+            <hr/>
             <h3>Gráficas</h3>
             <SequencesCharts
                 firstSequence = { functions.firstFunction }

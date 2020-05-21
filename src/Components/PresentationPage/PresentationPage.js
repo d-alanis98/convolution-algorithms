@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SubmitButton from '../Layout/SubmitButton';
 import Title from './Title';
-import Members from './Members';
+import Members from './Members/Members';
 
 const PresentationPage = ({ history }) => {
 
