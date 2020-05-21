@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import FunctionInput from './Components/FunctionInput/FunctionInput';
 import PresentationPage from './Components/PresentationPage/PresentationPage';
-import FunctionPreview from './Components/FunctionPreview/FunctionPreview';
 import ConvolutionResult from './Components/ConvolutionResult/ConvolutionResult';
+import FunctionInputContainer from './Components/FunctionInput/FunctionInputContainer';
+import FunctionPreviewContainer from './Components/FunctionPreview/FunctionPreviewContainer';
 
 const Routes = () => {
     return(
@@ -20,14 +20,14 @@ const Routes = () => {
                 exact
                 strict
             >
-                <FunctionInput />
+                <FunctionInputContainer />
             </Route>
             <Route
                 path = '/preview'
                 exact
                 strict
             >
-                <FunctionPreview />
+                <FunctionPreviewContainer />
             </Route>
             <Route
                 path = '/result'

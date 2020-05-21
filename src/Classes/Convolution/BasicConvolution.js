@@ -1,22 +1,15 @@
 //Prototypes
 Array.prototype.addZerosToEnd = function(zeros){
-    return this.concat(new Array(zeros + 1).fill(0));
+    return this.concat(new Array(zeros).fill(0));
 }
 
 Array.prototype.addZerosToStart = function(zeros){
     return (new Array(zeros).fill(0)).concat(this);
 }
 
-Array.prototype.getArrayBlocks = function(itemsPerBlock){
-    let numberOfArrayBlocks = Math.ceil(this.length / itemsPerBlock);
-    return Array.from(new Array(numberOfArrayBlocks)).map((array, index) => {
-        let blockStartIndex = index * itemsPerBlock;
-        let blockEndIndex = blockStartIndex + itemsPerBlock;
-        return this.slice(blockStartIndex, blockEndIndex);
-    });
-}
 
 export default class BasicConvolution{
+
     constructor(firstFunctionProperties, secondFunctionProperties){
         this.firstFunctionProperties = firstFunctionProperties;
         this.secondFunctionProperties = secondFunctionProperties;
@@ -27,8 +20,18 @@ export default class BasicConvolution{
         this.resultSequence = [];
     }
 
+    //Propeidad de resultado vacío disponible para esta clase y las que hereden de esta
+    static EMPTY_RESULT = {
+        sequence: [],
+        origin: 0,
+        periodic: false,
+    }
+
 
     //Helpers
+
+    addZerosToArrayEnd = (array, zeros) => array.addZerosToEnd(zeros);
+
     getResultArrayLength = resultArray => resultArray[0].length;
 
     getLengthFixedArrays = arraysToFix => {
@@ -36,13 +39,29 @@ export default class BasicConvolution{
         return arraysToFix.map(array => array.addZerosToStart(targetLength - array.length))
     }
 
+    getFirstSequencePeriod = () => this.firstFunctionProperties.periodic ? this.firstFunction.length : 0;
+
+    getSecondSequencePeriod = () => this.secondFunctionProperties.periodic ? this.secondFunction.length : 0;
+
+
     //Algoritmo
     calculateResultSequenceOrigin = () => {
         return this.firstFunctionProperties.origin + this.secondFunctionProperties.origin;
     }
 
+    areBothFunctionsPeriodic = () => this.firstFunctionProperties.periodic && this.secondFunctionProperties.periodic;
+
     isConvolutionResultPeriodic = () => {
         return this.firstFunctionProperties.periodic || this.secondFunctionProperties.periodic;
+    }
+
+    getConvolutionPeriod = () => {
+        let firstFunctionPeriod = 0, secondFunctionPeriod = 0;
+        if(this.firstFunctionProperties.periodic)
+            firstFunctionPeriod = this.firstFunction.length;
+        if(this.secondFunctionProperties.periodic)
+            secondFunctionPeriod = this.secondFunction.length;
+        return Math.max(firstFunctionPeriod, secondFunctionPeriod); //El periodo de la convolución será el periodo más grande
     }
 
     sumArrays = arraysToSum => {
@@ -66,17 +85,23 @@ export default class BasicConvolution{
         let secondFunctionNumberOfItems = this.secondFunction.length;
         return this.secondFunction.map((secondFunctionItem, secondFunctionIndex) => {
             let parcialResultArray = this.firstFunction.map(firstFunctionItem => firstFunctionItem * secondFunctionItem)
-            return parcialResultArray.addZerosToEnd(secondFunctionNumberOfItems - secondFunctionIndex - 2)
+            return parcialResultArray.addZerosToEnd(secondFunctionNumberOfItems - secondFunctionIndex - 1)
         })
     }
 
 
 
-    calculate = () => {
-        let partialResultArray = this.multiplicate();
-        let lengthFixedResultArray = this.getLengthFixedArrays(partialResultArray);
-        this.resultSequence = this.sumArrays(lengthFixedResultArray);
-
+    calculate(errorCallback = null){
+        try{
+            let partialResultArray = this.multiplicate();
+            let lengthFixedResultArray = this.getLengthFixedArrays(partialResultArray);
+            this.resultSequence = this.sumArrays(lengthFixedResultArray);
+        }
+        catch(error){
+            if(errorCallback && typeof(errorCallback) === 'function')
+                errorCallback(error.message)
+            return BasicConvolution.EMPTY_RESULT;
+        }
         return{
             sequence: this.resultSequence,
             origin: this.calculateResultSequenceOrigin(),

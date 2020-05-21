@@ -9,7 +9,6 @@ const Chart = ({ id, title, label, color, origin, type, sequence }) => {
     const DEFAULT_TYPE   = 'bar';
     const DEFAULT_COLOR  = 'rgba(255, 0, 255, 0.5)';
     const DEFAULT_LABEL  = 'Valores';
-    const DEFAULT_TITLE  = 'Gráfica';
 
     //HOOKS
     //Ref
@@ -48,8 +47,8 @@ const Chart = ({ id, title, label, color, origin, type, sequence }) => {
                     }]
                 },
                 title: {
-                    display: true,
-                    text: title || DEFAULT_TITLE
+                    display: title ? true : false,
+                    text: title
                 },
                 
             },

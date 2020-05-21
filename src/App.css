@@ -7,11 +7,19 @@ body{
   
 }
 
-.form-control{
+.form-group input{
   background-color: rgba(116, 235, 213, 0.3)!important;
   color: whitesmoke!important;
   border-color: whitesmoke!important;
 }
+
+.form-group select{
+  background-color: rgba(116, 235, 213, 0.3)!important;
+  color: grey!important;
+  border-color: rgba(116, 235, 255, 0.8)!important;
+  border-width: 0.10rem;
+}
+
 
 .text-main{
   color: rgba(0, 0, 0, 0.55);
