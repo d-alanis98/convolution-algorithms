@@ -16,6 +16,12 @@ const Routes = () => {
                 <PresentationPage />
             </Route>
             <Route
+                path = '/convolution-algorithms'
+                exact
+            >
+                <PresentationPage />
+            </Route>
+            <Route
                 path = '/start'
                 exact
                 strict
