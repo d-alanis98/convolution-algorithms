@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/convolution-algorithms/static/css/main.ff3d5093.chunk.css",
+    "main.js": "/convolution-algorithms/static/js/main.e74e531f.chunk.js",
+    "main.js.map": "/convolution-algorithms/static/js/main.e74e531f.chunk.js.map",
+    "runtime-main.js": "/convolution-algorithms/static/js/runtime-main.96ec9443.js",
+    "runtime-main.js.map": "/convolution-algorithms/static/js/runtime-main.96ec9443.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/convolution-algorithms/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.6d8aedc2.chunk.js": "/convolution-algorithms/static/js/2.6d8aedc2.chunk.js",
+    "static/js/2.6d8aedc2.chunk.js.map": "/convolution-algorithms/static/js/2.6d8aedc2.chunk.js.map",
+    "index.html": "/convolution-algorithms/index.html",
+    "precache-manifest.0bb6e4ab75ac7c288f8095a82fcd6a4f.js": "/convolution-algorithms/precache-manifest.0bb6e4ab75ac7c288f8095a82fcd6a4f.js",
+    "service-worker.js": "/convolution-algorithms/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/convolution-algorithms/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.ff3d5093.chunk.css.map": "/convolution-algorithms/static/css/main.ff3d5093.chunk.css.map",
+    "static/js/2.6d8aedc2.chunk.js.LICENSE.txt": "/convolution-algorithms/static/js/2.6d8aedc2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.96ec9443.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.6d8aedc2.chunk.js",
+    "static/css/main.ff3d5093.chunk.css",
+    "static/js/main.e74e531f.chunk.js"
+  ]
+}
