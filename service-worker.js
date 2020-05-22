@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/convolution-algorithms/precache-manifest.0bb6e4ab75ac7c288f8095a82fcd6a4f.js"
+  "/convolution-algorithms/precache-manifest.dc07e8c6c475f9493dce876f12e6c401.js"
 );
 
 self.addEventListener('message', (event) => {
