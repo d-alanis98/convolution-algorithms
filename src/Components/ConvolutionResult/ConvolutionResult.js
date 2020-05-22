@@ -1,7 +1,10 @@
 import React from 'react';
+//Componentes
+import Sequence from '../Sequence/Sequence';
+import ResultSequenceChart from './Charts/ResultSequenceChart';
 //HOC
 import withConvolution from '../../Context/Convolution/HOC/withConvolution';
-import Sequence from '../Sequence/Sequence';
+
 
 const ConvolutionResult = ({ convolutionResult }) => {
     return(
@@ -12,6 +15,13 @@ const ConvolutionResult = ({ convolutionResult }) => {
                 sequence = { convolutionResult }
                 sequenceProperty = 'sequence'
             />
+            <div className='row justify-content-center'>
+                <div className='col-lg-6 col-md-12'>
+                    <ResultSequenceChart
+                        resultSequence = { convolutionResult }
+                    />
+                </div>
+            </div>
         </div>
     )
 }
