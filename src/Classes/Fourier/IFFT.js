@@ -13,7 +13,7 @@
 //es una matriz [real, imaginario]
 //-------------------------------------------------
 
-var fft = require('./fft').fft;
+var fft = require('./FFT').fft;
 
 
 module.exports = {

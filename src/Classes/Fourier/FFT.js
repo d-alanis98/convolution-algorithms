@@ -14,8 +14,8 @@
 //-------------------------------------------------
 
 
-var complex = require('./complex'),
-    fftUtil = require('./fftutil'),
+var complex = require('./Complex'),
+    fftUtil = require('./FFTUtil'),
     twiddle = require('bit-twiddle');
 
 module.exports = {
